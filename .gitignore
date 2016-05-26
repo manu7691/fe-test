@@ -1,4 +1,7 @@
+.idea/
 bower_components/
 node_modules/
+static/
+static_dev/css/
 instructions.md
-.idea/
+/index.html

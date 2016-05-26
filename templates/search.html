@@ -1,0 +1,95 @@
+
+<div class="box-container">
+
+     <div class="form form-horizontal">
+
+         <div class="form-group">
+             <div class="col-sm-12">
+                 <div angucomplete-alt id="origin"
+                      placeholder="Choose origin"
+                      maxlength="50"
+                      pause="100"
+                      selected-object="selectOrigin"
+                      local-data="countries"
+                      search-fields="name"
+                      title-field="name"
+                      minlength="1"
+                      input-class="form-control form-control-small"
+                      match-class="highlight"
+                      initial-value="selected_origin"
+                      text-searching="Searching for airports..."
+                      text-no-results="Any airport with this query was found"
+                         >
+                 </div>
+             </div>
+         </div>
+
+         <div class="form-group">
+             <div class="col-sm-12">
+                 <div angucomplete-alt id="destination"
+                      placeholder="Choose destination"
+                      maxlength="50"
+                      pause="100"
+                      selected-object="selectDestination"
+                      local-data="destinations"
+                      search-fields="name"
+                      title-field="name"
+                      minlength="1"
+                      input-class="form-control form-control-small"
+                      match-class="highlight"
+                      initial-value="selected_destination"
+                      text-searching="Searching for airports..."
+                      text-no-results="Any airport with this query was found"
+                      disable-input="destinations.length == 0">
+                 </div>
+             </div>
+         </div>
+
+         <div class="form-group">
+
+            <div class="col-sm-6">
+                <datepicker date-format="yyyy-MM-dd"
+                            date-min-limit="{{date_now}}"
+                            button-prev="<i class='fa fa-arrow-left'></i>"
+                            button-next="<i class='fa fa-arrow-right'></i>"
+                            selector="form-control">
+                    <div class="input-group date-picker">
+                        <input ng-model="departure_date" class="form-control" placeholder="Pick departure date"/>
+                        <span class="input-group-addon" style="border-radius: 0">
+                            <i class="fa fa-lg fa-calendar"></i>
+                        </span>
+                    </div>
+                </datepicker>
+            </div>
+
+            <div class="col-sm-6">
+                <datepicker date-format="yyyy-MM-dd"
+                            button-prev="<i class='fa fa-arrow-left'></i>"
+                            button-next="<i class='fa fa-arrow-right'></i>"
+                            date-min-limit="{{departure_date}}"
+                            selector="form-control">
+                    <div class="input-group date-picker">
+                        <input ng-model="return_date"  class="form-control" placeholder="Pick return date"/>
+                        <span class="input-group-addon" style="border-radius:0">
+                            <i class="fa fa-lg fa-calendar"></i>
+                        </span>
+
+                    </div>
+                </datepicker>
+            </div>
+
+         </div>
+
+         <div class="form-group">
+             <div class="col-sm-8 error-message">
+                 {{error}}
+                {{flights | json}}
+             </div>
+             <div class="col-sm-4">
+                 <div class="btn btn-default pull-right" ng-disabled="disableSearchButton()" ng-click="lookForFlights()"  style="border-radius: 0;">Search</div>
+             </div>
+         </div>
+
+     </div>
+
+</div>

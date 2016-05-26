@@ -1,3 +1,55 @@
-body{
-  background: #a5a5a5;
+body {
+  background: url('../beach.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.box-container{
+  background:#78B6EC;
+  position:absolute;
+  color:#fff;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 10px 5px;
+  .form{
+    margin: 15px;
+  }
+}
+
+input {
+  border-radius: 0 !important;
+}
+
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  position: relative;
+  text-align: center;
+  top: 10%;
+  font-size: 50px;
+  color: aliceblue;
+}
+
+.error-message{
+  color: black;
+  font-weight: bolder;
+  margin-top: 5px;
+}
+
+
+// Angucomplete Custom style
+.angucomplete-dropdown{
+  width: 100%;
+  overflow-y: auto;
+  max-height: 153px;
+}
+.angucomplete-selected-row{
+  background-color: #138EFA;
 }

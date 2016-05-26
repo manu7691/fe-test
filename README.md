@@ -14,6 +14,11 @@
   bower install
  ```
 
+- Third, get bower components
+ ```
+  gulp build
+ ```
+
 - Last, run server
  ```
   gulp run
