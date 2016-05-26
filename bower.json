@@ -1,0 +1,20 @@
+{
+  "name": "fe-test",
+  "authors": [
+    "Manuel J. Lopez <me@manujlopez.com>"
+  ],
+  "description": "Frontend Test",
+  "main": "",
+  "keywords": [
+    "frontend",
+    "wroclaw",
+    "planes",
+    "to the sky"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "devDependencies": {
+    "angular": "^1.5.5"
+  }
+}
