@@ -1,44 +1,64 @@
+// Style body
 body {
   background: url('../beach.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  font-family: 'Nova Mono';
+  color: #324656;
 }
 
+// Font for inputs and calendar
+.input-group{
+  font-family: 'Nova Mono' ;
+}
+[class*="720kb-datepicker-"]{
+  font-family: 'Nova Mono';
+}
+
+// Remove border-radius on inputs and buttons
+input {
+  border-radius: 0 !important;
+}
+.input-group-addon{
+  border-radius: 0;
+}
+.btn{
+  border-radius: 0 !important;
+}
+
+// Blue Box
 .box-container{
-  background:#78B6EC;
-  position:absolute;
-  color:#fff;
-  top:50%;
-  left:50%;
-  padding:15px;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  box-shadow: 0 0 10px 5px;
-  .form{
+  background: #78B6EC;
+  color: #fff;
+  padding: 15px;
+  box-shadow: 0 0 10px 5px wheat;
+  &:hover{
+    box-shadow: 0 0 10px 5px white;
+  }
+  .child-container{
     margin: 15px;
   }
 }
 
-input {
-  border-radius: 0 !important;
-}
-
-
+// Title for app
 .title {
   font-family: 'Pacifico', cursive;
   font-weight: 400;
-  position: relative;
   text-align: center;
-  top: 10%;
   font-size: 50px;
   color: aliceblue;
+  height: 120px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
+// Remove text pointer
+.no-text{
+  cursor: pointer;
+}
+
+// Style for error message
 .error-message{
-  color: black;
+  color: white;
   font-weight: bolder;
   margin-top: 5px;
 }
@@ -52,4 +72,111 @@ input {
 }
 .angucomplete-selected-row{
   background-color: #138EFA;
+}
+
+// Icon - sprites
+.icon {
+  display: inline-block;
+  &.mirror{
+    transform: rotate(360deg) scale(-1,1);
+  }
+  &.center{
+    left: 34%;
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+
+// Scrollbar design
+::-webkit-scrollbar {
+  appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  height: 25px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+// Responsiveness on search form
+.date-picker{
+  &.origin {
+    @media all and (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+// Table responsivess styles
+@media all and (max-width: 655px) {
+
+  .table-adjust table,
+  .table-adjust thead,
+  .table-adjust tbody,
+  .table-adjust th,
+  .table-adjust td,
+  .table-adjust tr {
+    display: block;
+  }
+
+  .table-adjust thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table-adjust tr { border: 1px solid #ccc; }
+
+  .table-adjust  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50% !important;
+    @media all and (max-width: 459px) {
+      padding-left: 15px !important;
+    }
+    white-space: normal;
+    text-align:left;
+
+    &:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align:left;
+      font-weight: bold;
+      @media all  and (min-width: 460px) and (max-width: 655px) {
+        content: attr(data-title);
+      }
+    }
+  }
+
+}
+.table-adjust  td {
+  @media all and (max-width: 400px) {
+    font-size:12px;
+  }
+}
+.text-info{
+  display: none;
+  @media all and (max-width: 459px) {
+    display: block;
+    background-image: none !important;
+    margin-top: -5px;
+    height:28px;
+    &:before{
+      content: attr(data-title);
+    }
+  }
+}
+.info{
+  @media all and (max-width: 459px) {
+    margin-left: 7px;
+    position: absolute;
+    top: 15px;
+  }
 }

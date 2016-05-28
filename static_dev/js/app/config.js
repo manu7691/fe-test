@@ -1,6 +1,7 @@
 angular
     .module('app')
     .config(function ($stateProvider, $urlRouterProvider) {
+        // Route Configuration
         $stateProvider
         .state('search', {
             url: '/',
@@ -8,7 +9,7 @@ angular
             templateUrl: 'templates/search.html'
         })
         .state('results', {
-            url: '/results',
+            url: '/flights/from/:origin/to/:destination/:departure_date/:return_date/',
             controller: 'ResultsController as ctrl',
             templateUrl: 'templates/results.html'
         });

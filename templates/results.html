@@ -1,1 +1,43 @@
-Results
+
+<div class="box-container" ng-if="loaded">
+
+    <div class="child-container">
+
+
+        <div class="row">
+            <div class="col-xs-offset-10 col-xs-2">
+                <div ui-sref="search" class="btn btn-default pull-right">
+                    New Search
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="flights.length > 0" style="display: inline-block;margin-top: 5px;">
+            <p>List of cheapest flights ({{origin}} - {{destination}}):</p>
+        </div>
+        <table ng-if="flights.length > 0"   class="table-adjust table table-hover table-condensed" style="background-color: white;">
+            <thead>
+            <tr>
+                <th>Departure date</th>
+                <th>Return date</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="flight in flights  | orderBy:'price' ">
+            <tr class="text-left">
+                <td data-title="Departure date"><i data-title="Departure date" class="text-info"></i><span class="info">{{ flight.dateFrom | date:'MMMM dd, yyyy - hh:mm' }}</span></td>
+                <td data-title="Return date"><i data-title="Return date" class="text-info"></i><span class="info">{{ flight.dateTo | date:'MMMM dd, yyyy - hh:mm' }}</span> </td>
+                <td data-title="Price"><i data-title="Price" class="text-info"></i><span class="info">{{ flight.price | currency:flight.currency:2}}</span></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div ng-if="flights.length == 0" style="margin-top: 5px;">
+            <p>Oopps!!! There is no available flights</p>
+            <i class="icon icon-boat center"></i>
+            <p class="text-center">maybe you want to conquer the sea? ;)</p>
+        </div>
+
+    </div>
+
+</div>
