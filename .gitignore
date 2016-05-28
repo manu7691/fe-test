@@ -3,5 +3,6 @@ bower_components/
 node_modules/
 static/
 static_dev/css/
+tests/reports/
 instructions.md
 /index.html

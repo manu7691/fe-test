@@ -19,8 +19,10 @@ var gulp = require('gulp'),
     inject = require('gulp-inject'),
     angularFilesort = require('gulp-angular-filesort'),
     // Webserver
-    webserver = require('gulp-webserver');
-
+    webserver = require('gulp-webserver'),
+    // Help to find any change on protactor tests
+    protractorQA = require('gulp-protractor-qa'),
+    protractorAngular = require('gulp-angular-protractor');
 
 // Grab libraries files from bower_components
 gulp.task('collect-components', function() {
@@ -126,7 +128,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('inject',function(){
-    return gulp.src('./templates/index.html')
+    return gulp.src('templates/index.html')
         .pipe(inject(
             gulp.src(['static/js/**/*.min.js']).pipe(angularFilesort())
         ))
@@ -148,6 +150,30 @@ gulp.task('run',['inject'], function() {
             fallback: 'index.html'
         }));
 });
+
+gulp.task('protractor-qa', function() {
+    protractorQA.init({
+        runOnce: false, // optional
+        testSrc: 'tests/fe-spec.js',
+        viewSrc: [ 'index.html', 'templates/*.html' ]
+    });
+});
+
+// Setting up the test task
+gulp.task('test', function(callback) {
+    gulp
+        .src(['tests/fe-spec.js'])
+        .pipe(protractorAngular({
+            'configFile': 'tests/conf.js',
+            'debug': false,
+            'autoStartStopServer': true
+        }))
+        .on('error', function(e) {
+            console.log(e);
+        })
+        .on('end', callback);
+});
+
 
 // Default task - Run webserver
 gulp.task('default',['run']);

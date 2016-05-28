@@ -24,17 +24,19 @@
   gulp run
  ```
 
+### How to test it
 
+- It is required to have the server running, after that, tests are launched with command:
+  ```
+ gulp test
+ ```
 
----
+### Web on 'production'
 
-#### Libraries
+Take a look: [Fe Test App](http://manujlopez.com/fe)
 
-- AngularJS : http://www.angularjs.org
 
 ### Icons
 
 - Credits to Dima Lagunov for the [paper plane icon](https://thenounproject.com/search/?q=plane%20paper&i=385774)
-
-
 - Credits to Creative Stall for the [boat icon](https://thenounproject.com/search/?q=boat&i=129847)

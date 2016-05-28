@@ -30,8 +30,8 @@ function SearchController($scope,$state,$filter,$timeout,dataFactory) {
         $state.go('results',{
             origin:self.selected_origin.description.iataCode,
             destination:self.selected_destination.description.iataCode,
-            departure_date: moment(Date(self.departure_date)).format('YYYY-MM-DD'),
-            return_date: moment(Date(self.return_date)).format('YYYY-MM-DD')
+            departure_date: moment(new Date(self.departure_date)).format('YYYY-MM-DD'),
+            return_date: moment(new Date(self.return_date)).format('YYYY-MM-DD')
         },{ location:'replace' });
 
     }

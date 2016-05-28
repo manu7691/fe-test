@@ -4,6 +4,12 @@ body {
   background-size: cover;
   font-family: 'Nova Mono';
   color: #324656;
+  user-select: none;
+}
+
+// Give some space to the container of the views (RWD)
+.container-view{
+  margin-bottom: 50px;
 }
 
 // Font for inputs and calendar
@@ -54,6 +60,11 @@ input {
 // Remove text pointer
 .no-text{
   cursor: pointer;
+}
+
+// Small margin top for messages
+.top{
+  margin-top: 5px;
 }
 
 // Style for error message
@@ -109,6 +120,9 @@ input {
 }
 
 
+.table-adjust{
+  background-color: white;
+}
 // Table responsivess styles
 @media all and (max-width: 655px) {
 
