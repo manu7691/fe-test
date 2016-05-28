@@ -17,10 +17,7 @@ describe('search flight almeria-dublin', function() {
 
         element(by.css('.box-container')).click();
 
-        browser.sleep(6000);
         element(by.css('.btn')).click();
-
-        browser.sleep(2000);
 
         // Considering api results are random we cant determine if query is gonna return results
         expect(element(by.css('.btn')).isPresent()).toBe(true,'Search was done');
